@@ -37,6 +37,7 @@ class Upload extends Component {
       this.setState({ successfullUploaded: true, uploading: false });
     } catch (e) {
       // Not Production ready! Do some error handling here instead...
+      console.log(e)
       this.setState({ successfullUploaded: true, uploading: false });
     }
   }
@@ -72,8 +73,8 @@ class Upload extends Component {
 
       const formData = new FormData();
       formData.append("file", file, file.name);
-
-      req.open("POST", "http://localhost:8000/upload");
+      req.open("POST", "http://127.0.0.1:5000/upload");
+      req.setRequestHeader("Access-Control-Allow-Origin", "*");
       req.send(formData);
     });
   }
