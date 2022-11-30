@@ -1,3 +1,6 @@
+@import url("./menu/style.css");
+@import url("./upload/Upload.css");
+
 body {
   margin: 0;
   padding: 0;
